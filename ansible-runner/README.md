@@ -7,7 +7,7 @@ Cela nécessite les fichiers suivants :
 - execution-environment.yaml
 - requirements.yaml (ansible)
 
-[La documentation du format].(https://docs.ansible.com/automation-controller/latest/html/userguide/ee_reference.html#dependencies)
+[La documentation du format](https://docs.ansible.com/automation-controller/latest/html/userguide/ee_reference.html#dependencies).
 
 ## Création de l'image
 
