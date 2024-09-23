@@ -1,0 +1,20 @@
+---
+# https://docs.ansible.com/automation-controller/latest/html/userguide/ee_reference.html#dependencies
+version: 3
+
+dependencies:
+  galaxy: requirements.yml
+  #python: requirements.txt
+  #system: bindep.txt
+
+images:
+  base_image:
+    name: ghcr.io/ansible-community/community-ee-minimal:2.17.4-1
+
+additional_build_steps:
+  prepend_base:
+    - RUN yum install -y git
+    - RUN python3 -m pip install --upgrade pip
+  append_final:
+    - RUN groupadd --gid 1000 vscode
+    - RUN adduser --home-dir /vscode --create-home --gid 1000 --uid 1000 vscode

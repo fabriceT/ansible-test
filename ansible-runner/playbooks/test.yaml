@@ -1,0 +1,15 @@
+- name: Gather and print local facts
+  hosts: localhost
+  become: true
+  gather_facts: true
+  tasks:
+
+   - name: Print facts
+     ansible.builtin.debug:
+      var: ansible_facts
+
+   - name: Extend the file to 2G (2*1024^3)
+     check_mode: true
+     community.general.filesize:
+       path: /var/bigfile
+       size: 2G
